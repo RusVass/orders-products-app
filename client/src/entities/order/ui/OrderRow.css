@@ -30,8 +30,23 @@
   font-weight: 600;
 }
 
-.order-row__count,
+.order-row__count {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
 .order-row__date {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.order-row__date-short {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.order-row__date-full {
   font-size: 0.85rem;
   color: var(--color-text-muted);
 }

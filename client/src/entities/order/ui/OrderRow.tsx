@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import type { Price } from '@/shared/types/money';
+import { formatDate } from '@/shared/lib/formatDate';
 import { PriceTag } from '@/shared/ui/PriceTag';
 import { TrashIcon } from '@/shared/ui/TrashIcon';
 import type { Order } from '../model/types';
@@ -15,6 +16,7 @@ interface OrderRowProps {
 export const OrderRow = ({ order, productCount, totals, onDeleteClick }: OrderRowProps) => {
   const { orderId } = useParams();
   const isActive = Number(orderId) === order.id;
+  const { short, full } = formatDate(order.date);
 
   return (
     <div className="order-row">
@@ -24,7 +26,10 @@ export const OrderRow = ({ order, productCount, totals, onDeleteClick }: OrderRo
           <span className="order-row__count">
             {productCount} {productCount === 1 ? 'product' : 'products'}
           </span>
-          <span className="order-row__date">{order.date}</span>
+        </div>
+        <div className="order-row__date">
+          <span className="order-row__date-short">{short}</span>
+          <span className="order-row__date-full">{full}</span>
         </div>
         <PriceTag prices={totals} />
       </Link>
