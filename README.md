@@ -14,13 +14,29 @@ Inventory-style Orders & Products manager. React 18 + TypeScript + Redux Toolkit
 - `docs/mockups/` — reference design mockups
 - `docs/source/` — original assignment material, kept verbatim for reference
 
+## Architecture
+
+`client/src` follows a lightweight Feature-Sliced Design: `app` (store, router, composition root) → `pages` (route-level, thin) → `widgets` (`layout` — Sidebar/Header/AppLayout) → `features` (named user actions) → `entities` (`order`, `product` — each owns its own `model/` and, where needed, `ui/`) → `shared` (generic, no domain knowledge). Dependencies only point one direction, app → ... → shared, and layers are held by convention rather than enforced tooling (no barrel files, no lint-boundary plugin) — proportionate for this app's size.
+
+A few decisions worth calling out specifically:
+
+- **Entities never reference each other.** `entities/order` and `entities/product` each own only their own slice/selectors/types. Deleting an order needs to remove its products too, but that cascade isn't a cross-slice `extraReducers` listener — it's `features/delete-order`, which explicitly dispatches both `orderRemoved` and `productsRemovedByOrder`. Cross-entity *reads* (e.g. a product row showing its parent order's title) are resolved the same way: a plain `useMemo`/`.find()` at the page level, not a selector that reaches into another entity's state.
+- **Features only exist where there's real orchestration to name.** `delete-order` earns a feature (two actions, two entities) — `delete-product` and the type/specification filters don't (one dispatch, or local component state), so they're inlined directly in their pages rather than abstracted prematurely.
+- **The realtime "online" counter is a hook, not a slice.** It's read by exactly one component and has no business logic beyond "show me the number the socket sent" — Redux would be indirection without payoff.
+- **The backend's only job is the live counter.** Redux (seeded from typed mock data) is the actual source of truth; there's no database in the running path. `db/schema.sql` is a separate, documentation-only artifact demonstrating the relational design.
+- **Docker and deployment account for Vite's build-time env inlining.** `VITE_SOCKET_URL` is a Docker build arg / hosting-platform build-time variable, not a runtime one — which is also why the deploy order matters (backend first, to get a URL to bake into the frontend's build).
+
 ## Running locally
+
+Requires Node 20+.
 
 ```bash
 cd client
 npm install
 npm run dev
 ```
+
+Open the URL Vite prints (typically `http://localhost:5173`). The app works on its own — the header's "online" counter just stays at 0 until the backend (below) is running.
 
 To also see the live "active sessions" counter in the header, run the backend in a second terminal:
 
@@ -29,6 +45,18 @@ cd server
 npm install
 npm start
 ```
+
+Neither service requires a `.env` file for local dev — `client/.env.example` and `server/.env.example` document the defaults already baked into the code (`http://localhost:4500` / `http://localhost:5173`). You only need an actual `.env` to override those, or when deploying (see below).
+
+### Running with Docker
+
+Alternatively, run both services together with one command (requires Docker):
+
+```bash
+docker compose up --build
+```
+
+Client on `http://localhost:8080`, backend on `http://localhost:4500`.
 
 ## Deployment
 
