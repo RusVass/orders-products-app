@@ -4,7 +4,7 @@ import { OrdersPage } from '@/pages/orders/OrdersPage';
 import { ProductsPage } from '@/pages/products/ProductsPage';
 import { PlaceholderPage } from '@/shared/ui/PlaceholderPage';
 
-export function AppRouter() {
+export const AppRouter = () => {
   return (
     <Routes>
       <Route element={<AppLayout />}>
@@ -18,4 +18,4 @@ export function AppRouter() {
       </Route>
     </Routes>
   );
-}
+};

@@ -4,6 +4,6 @@ interface EmptyStateProps {
   message: string;
 }
 
-export function EmptyState({ message }: EmptyStateProps) {
-  return <div className="empty-state">{message}</div>;
-}
+export const EmptyState = ({ message }: EmptyStateProps) => (
+  <div className="empty-state">{message}</div>
+);

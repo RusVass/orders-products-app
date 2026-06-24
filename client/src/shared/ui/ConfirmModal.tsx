@@ -10,14 +10,14 @@ interface ConfirmModalProps {
   onCancel: () => void;
 }
 
-export function ConfirmModal({
+export const ConfirmModal = ({
   title,
   message,
   confirmLabel = 'Delete',
   cancelLabel = 'Cancel',
   onConfirm,
   onCancel,
-}: ConfirmModalProps) {
+}: ConfirmModalProps) => {
   return (
     <div className="confirm-modal__overlay" onClick={onCancel}>
       <div className="confirm-modal__dialog" onClick={(event) => event.stopPropagation()}>
@@ -34,4 +34,4 @@ export function ConfirmModal({
       </div>
     </div>
   );
-}
+};

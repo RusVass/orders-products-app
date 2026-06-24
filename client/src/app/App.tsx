@@ -4,7 +4,7 @@ import { AppRouter } from './AppRouter';
 import { store } from './store';
 import './main.css';
 
-function App() {
+const App = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
@@ -12,6 +12,6 @@ function App() {
       </BrowserRouter>
     </Provider>
   );
-}
+};
 
 export default App;

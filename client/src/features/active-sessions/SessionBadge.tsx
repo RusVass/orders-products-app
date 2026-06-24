@@ -1,7 +1,7 @@
 import { useActiveSessions } from './useActiveSessions';
 import './SessionBadge.css';
 
-export function SessionBadge() {
+export const SessionBadge = () => {
   const count = useActiveSessions();
 
   return (
@@ -10,4 +10,4 @@ export function SessionBadge() {
       {count} online
     </div>
   );
-}
+};

@@ -3,7 +3,7 @@ import { io } from 'socket.io-client';
 
 const SOCKET_URL = import.meta.env.VITE_SOCKET_URL ?? 'http://localhost:4500';
 
-export function useActiveSessions() {
+export const useActiveSessions = () => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -16,4 +16,4 @@ export function useActiveSessions() {
   }, []);
 
   return count;
-}
+};

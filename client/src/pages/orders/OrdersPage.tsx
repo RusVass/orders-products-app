@@ -9,7 +9,7 @@ import { ConfirmModal } from '@/shared/ui/ConfirmModal';
 import { EmptyState } from '@/shared/ui/EmptyState';
 import './OrdersPage.css';
 
-function sumPricesBySymbol(prices: Price[]): Price[] {
+const sumPricesBySymbol = (prices: Price[]): Price[] => {
   const totals = new Map<string, Price>();
   for (const price of prices) {
     const existing = totals.get(price.symbol);
@@ -20,9 +20,9 @@ function sumPricesBySymbol(prices: Price[]): Price[] {
     }
   }
   return [...totals.values()];
-}
+};
 
-export function OrdersPage() {
+export const OrdersPage = () => {
   const orders = useAppSelector(selectAllOrders);
   const products = useAppSelector(selectAllProducts);
   const deleteOrder = useDeleteOrder();
@@ -74,4 +74,4 @@ export function OrdersPage() {
       )}
     </div>
   );
-}
+};

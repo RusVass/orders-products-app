@@ -10,7 +10,7 @@ interface ProductRowProps {
   onDeleteClick: () => void;
 }
 
-export function ProductRow({ product, orderTitle, orderDate, onDeleteClick }: ProductRowProps) {
+export const ProductRow = ({ product, orderTitle, orderDate, onDeleteClick }: ProductRowProps) => {
   return (
     <div className="product-row">
       <img className="product-row__photo" src={product.photo} alt={product.title} />
@@ -37,4 +37,4 @@ export function ProductRow({ product, orderTitle, orderDate, onDeleteClick }: Pr
       </button>
     </div>
   );
-}
+};

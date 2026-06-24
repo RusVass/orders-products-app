@@ -14,7 +14,7 @@ import './ProductsPage.css';
 
 const ALL = 'All';
 
-export function ProductsPage() {
+export const ProductsPage = () => {
   const dispatch = useAppDispatch();
   const products = useAppSelector(selectAllProducts);
   const orders = useAppSelector(selectAllOrders);
@@ -95,4 +95,4 @@ export function ProductsPage() {
       )}
     </div>
   );
-}
+};

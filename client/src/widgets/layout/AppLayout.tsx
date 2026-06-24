@@ -4,7 +4,7 @@ import { Header } from './Header';
 import { Sidebar } from './Sidebar';
 import './layout.css';
 
-export function AppLayout() {
+export const AppLayout = () => {
   const location = useLocation();
 
   return (
@@ -28,4 +28,4 @@ export function AppLayout() {
       </div>
     </div>
   );
-}
+};

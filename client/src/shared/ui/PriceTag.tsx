@@ -5,7 +5,7 @@ interface PriceTagProps {
   prices: Price[];
 }
 
-export function PriceTag({ prices }: PriceTagProps) {
+export const PriceTag = ({ prices }: PriceTagProps) => {
   if (prices.length === 0) {
     return null;
   }
@@ -24,4 +24,4 @@ export function PriceTag({ prices }: PriceTagProps) {
       ))}
     </div>
   );
-}
+};

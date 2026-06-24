@@ -8,7 +8,7 @@ const NAV_ITEMS = [
   { to: '/settings', label: 'Settings' },
 ];
 
-export function Sidebar() {
+export const Sidebar = () => {
   return (
     <aside className="sidebar">
       <div className="sidebar__avatar">
@@ -40,4 +40,4 @@ export function Sidebar() {
       </nav>
     </aside>
   );
-}
+};

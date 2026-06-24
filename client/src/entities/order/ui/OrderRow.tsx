@@ -11,7 +11,7 @@ interface OrderRowProps {
   onDeleteClick: () => void;
 }
 
-export function OrderRow({ order, productCount, totals, onDeleteClick }: OrderRowProps) {
+export const OrderRow = ({ order, productCount, totals, onDeleteClick }: OrderRowProps) => {
   return (
     <div className="order-row">
       <div className="order-row__main">
@@ -32,4 +32,4 @@ export function OrderRow({ order, productCount, totals, onDeleteClick }: OrderRo
       </button>
     </div>
   );
-}
+};
