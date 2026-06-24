@@ -10,6 +10,7 @@ export function AppRouter() {
         <Route index element={<Navigate to="/orders" replace />} />
         <Route path="orders" element={<OrdersPage />} />
         <Route path="products" element={<ProductsPage />} />
+        <Route path="*" element={<Navigate to="/orders" replace />} />
       </Route>
     </Routes>
   );
