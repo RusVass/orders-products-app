@@ -15,7 +15,7 @@ export function OrderRow({ order, productCount, totals, onDeleteClick }: OrderRo
     <div className="order-row">
       <div className="order-row__main">
         <span className="order-row__title">{order.title}</span>
-        <span className="order-row__count">{productCount} продукта</span>
+        <span className="order-row__count">{productCount} продукт</span>
         <span className="order-row__date">{order.date}</span>
       </div>
       <PriceTag prices={totals} />
