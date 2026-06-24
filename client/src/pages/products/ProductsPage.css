@@ -1,0 +1,19 @@
+.products-page__header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.products-page__heading {
+  margin: 0;
+  margin-right: auto;
+}
+
+.products-page__filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
