@@ -18,10 +18,3 @@ export interface Product {
   order: number;
   date: string;
 }
-
-export interface Order {
-  id: number;
-  title: string;
-  date: string;
-  description: string;
-}
