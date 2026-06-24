@@ -13,8 +13,8 @@ interface ConfirmModalProps {
 export function ConfirmModal({
   title,
   message,
-  confirmLabel = 'Удалить',
-  cancelLabel = 'Отменить',
+  confirmLabel = 'Delete',
+  cancelLabel = 'Cancel',
   onConfirm,
   onCancel,
 }: ConfirmModalProps) {

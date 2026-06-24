@@ -18,7 +18,7 @@ export function ProductRow({ product, orderTitle, orderDate, onDeleteClick }: Pr
         <span className="product-row__title">{product.title}</span>
         <span className="product-row__serial">SN-{product.serialNumber}</span>
       </div>
-      <span className="product-row__condition">{product.isNew ? 'Новый' : 'Б/У'}</span>
+      <span className="product-row__condition">{product.isNew ? 'New' : 'Used'}</span>
       <span className="product-row__guarantee">
         {product.guarantee.start} — {product.guarantee.end}
       </span>
@@ -30,7 +30,7 @@ export function ProductRow({ product, orderTitle, orderDate, onDeleteClick }: Pr
       <button
         type="button"
         className="product-row__delete btn btn-link"
-        aria-label="Удалить продукт"
+        aria-label="Delete product"
         onClick={onDeleteClick}
       >
         <TrashIcon />

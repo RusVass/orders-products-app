@@ -12,7 +12,7 @@ import { ConfirmModal } from '@/shared/ui/ConfirmModal';
 import { EmptyState } from '@/shared/ui/EmptyState';
 import './ProductsPage.css';
 
-const ALL = 'Все';
+const ALL = 'All';
 
 export function ProductsPage() {
   const dispatch = useAppDispatch();
@@ -40,9 +40,9 @@ export function ProductsPage() {
   return (
     <div className="products-page">
       <div className="products-page__header">
-        <h1 className="products-page__heading">Продукты / {products.length}</h1>
+        <h1 className="products-page__heading">Products / {products.length}</h1>
         <label className="products-page__filter">
-          Тип:
+          Type:
           <select value={selectedType} onChange={(event) => setSelectedType(event.target.value)}>
             <option value={ALL}>{ALL}</option>
             {types.map((type) => (
@@ -53,7 +53,7 @@ export function ProductsPage() {
           </select>
         </label>
         <label className="products-page__filter">
-          Спецификация:
+          Specification:
           <select value={selectedSpec} onChange={(event) => setSelectedSpec(event.target.value)}>
             <option value={ALL}>{ALL}</option>
             {specs.map((spec) => (
@@ -66,7 +66,7 @@ export function ProductsPage() {
       </div>
 
       {visibleProducts.length === 0 ? (
-        <EmptyState message="Нет продуктов" />
+        <EmptyState message="No products" />
       ) : (
         visibleProducts.map((product) => {
           const order = orders.find((candidate) => candidate.id === product.order);
@@ -84,7 +84,7 @@ export function ProductsPage() {
 
       {pendingProduct && (
         <ConfirmModal
-          title="Вы уверены, что хотите удалить этот продукт?"
+          title="Are you sure you want to delete this product?"
           message={pendingProduct.title}
           onConfirm={() => {
             dispatch(productRemoved(pendingProduct.id));

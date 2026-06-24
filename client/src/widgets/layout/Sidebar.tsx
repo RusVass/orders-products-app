@@ -1,11 +1,11 @@
 import { Link, NavLink } from 'react-router-dom';
 
 const NAV_ITEMS = [
-  { to: '/orders', label: 'Приход' },
-  { to: '/groups', label: 'Группы' },
-  { to: '/products', label: 'Продукты' },
-  { to: '/users', label: 'Пользователи' },
-  { to: '/settings', label: 'Настройки' },
+  { to: '/orders', label: 'Orders' },
+  { to: '/groups', label: 'Groups' },
+  { to: '/products', label: 'Products' },
+  { to: '/users', label: 'Users' },
+  { to: '/settings', label: 'Settings' },
 ];
 
 export function Sidebar() {
@@ -13,7 +13,7 @@ export function Sidebar() {
     <aside className="sidebar">
       <div className="sidebar__avatar">
         <img className="sidebar__avatar-image" src="/images/avatar-placeholder.svg" alt="" />
-        <Link to="/settings" className="sidebar__settings-button" aria-label="Настройки">
+        <Link to="/settings" className="sidebar__settings-button" aria-label="Settings">
           <svg
             width="14"
             height="14"

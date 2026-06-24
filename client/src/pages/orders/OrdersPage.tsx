@@ -45,10 +45,10 @@ export function OrdersPage() {
 
   return (
     <div className="orders-page">
-      <h1 className="orders-page__heading">Приходы / {orders.length}</h1>
+      <h1 className="orders-page__heading">Orders / {orders.length}</h1>
 
       {rows.length === 0 ? (
-        <EmptyState message="Нет приходов" />
+        <EmptyState message="No orders" />
       ) : (
         rows.map(({ order, productCount, totals }) => (
           <OrderRow
@@ -63,7 +63,7 @@ export function OrdersPage() {
 
       {pendingOrder && (
         <ConfirmModal
-          title="Вы уверены, что хотите удалить этот приход?"
+          title="Are you sure you want to delete this order?"
           message={pendingOrder.title}
           onConfirm={() => {
             deleteOrder(pendingOrder.id);

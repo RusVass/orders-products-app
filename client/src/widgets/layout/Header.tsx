@@ -18,7 +18,7 @@ export function Header() {
   return (
     <header className="header">
       <div className="header__brand">INVENTORY</div>
-      <input className="header__search form-control" type="search" placeholder="Поиск" />
+      <input className="header__search form-control" type="search" placeholder="Search" />
       <SessionBadge />
       <div className="header__clock">
         <span className="header__clock-date">{dateFormatter.format(now)}</span>

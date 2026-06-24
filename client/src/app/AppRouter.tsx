@@ -10,10 +10,10 @@ export function AppRouter() {
       <Route element={<AppLayout />}>
         <Route index element={<Navigate to="/orders" replace />} />
         <Route path="orders" element={<OrdersPage />} />
-        <Route path="groups" element={<PlaceholderPage title="Группы" />} />
+        <Route path="groups" element={<PlaceholderPage title="Groups" />} />
         <Route path="products" element={<ProductsPage />} />
-        <Route path="users" element={<PlaceholderPage title="Пользователи" />} />
-        <Route path="settings" element={<PlaceholderPage title="Настройки" />} />
+        <Route path="users" element={<PlaceholderPage title="Users" />} />
+        <Route path="settings" element={<PlaceholderPage title="Settings" />} />
         <Route path="*" element={<Navigate to="/orders" replace />} />
       </Route>
     </Routes>

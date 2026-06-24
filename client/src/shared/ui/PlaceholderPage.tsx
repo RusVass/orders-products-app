@@ -8,7 +8,7 @@ export function PlaceholderPage({ title }: PlaceholderPageProps) {
   return (
     <div className="placeholder-page">
       <h1>{title}</h1>
-      <EmptyState message="В разработке" />
+      <EmptyState message="Under Development" />
     </div>
   );
 }
