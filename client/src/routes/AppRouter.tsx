@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { AppLayout } from '@/widgets/layout/AppLayout';
-import { OrdersPage } from '../features/orders/OrdersPage';
-import { ProductsPage } from '../features/products/ProductsPage';
+import { OrdersPage } from '@/pages/orders/OrdersPage';
+import { ProductsPage } from '@/pages/products/ProductsPage';
 
 export function AppRouter() {
   return (
