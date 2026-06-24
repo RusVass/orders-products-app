@@ -30,8 +30,24 @@
 }
 
 .product-row__serial,
-.product-row__guarantee,
+.product-row__type,
 .product-row__order-date {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.product-row__guarantee {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.product-row__guarantee-short {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.product-row__guarantee-full {
   font-size: 0.85rem;
   color: var(--color-text-muted);
 }
