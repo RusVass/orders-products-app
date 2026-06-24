@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { Outlet, useLocation } from 'react-router-dom';
-import { Header } from './Header';
 import { Sidebar } from './Sidebar';
+import { TopMenu } from './TopMenu';
 import './layout.css';
 
 export const AppLayout = () => {
@@ -9,7 +9,7 @@ export const AppLayout = () => {
 
   return (
     <div className="app-layout">
-      <Header />
+      <TopMenu />
       <div className="app-layout__body">
         <Sidebar />
         <main className="app-layout__content">

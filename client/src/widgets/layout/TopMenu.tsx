@@ -12,7 +12,7 @@ const timeFormatter = new Intl.DateTimeFormat('en-GB', {
   minute: '2-digit',
 });
 
-export const Header = () => {
+export const TopMenu = () => {
   const now = useClock();
 
   return (
