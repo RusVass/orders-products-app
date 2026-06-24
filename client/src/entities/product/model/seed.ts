@@ -1,7 +1,8 @@
-import type { Product } from '../types';
+import type { Product } from './types';
 
 // Ported from the original app.js (see docs/source/app.js): fixes a missing
-// comma before `guarantee` that made the file unparsable.
+// comma before `guarantee` that made the file unparsable, and normalizes
+// isNew/isDefault from 0|1 to boolean.
 export const products: Product[] = [
   {
     id: 1,
