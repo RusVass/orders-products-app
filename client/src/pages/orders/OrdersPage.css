@@ -1,3 +1,14 @@
 .orders-page__heading {
   margin-bottom: 24px;
 }
+
+.orders-page__body {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.orders-page__list {
+  flex: 1;
+  min-width: 0;
+}

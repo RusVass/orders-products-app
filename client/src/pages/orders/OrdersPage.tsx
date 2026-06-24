@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import { useAppSelector } from '@/app/hooks';
 import { selectAllOrders } from '@/entities/order/model/selectors';
 import { OrderRow } from '@/entities/order/ui/OrderRow';
@@ -47,19 +48,24 @@ export const OrdersPage = () => {
     <div className="orders-page">
       <h1 className="orders-page__heading">Orders / {orders.length}</h1>
 
-      {rows.length === 0 ? (
-        <EmptyState message="No orders" />
-      ) : (
-        rows.map(({ order, productCount, totals }) => (
-          <OrderRow
-            key={order.id}
-            order={order}
-            productCount={productCount}
-            totals={totals}
-            onDeleteClick={() => setPendingDeleteId(order.id)}
-          />
-        ))
-      )}
+      <div className="orders-page__body">
+        <div className="orders-page__list">
+          {rows.length === 0 ? (
+            <EmptyState message="No orders" />
+          ) : (
+            rows.map(({ order, productCount, totals }) => (
+              <OrderRow
+                key={order.id}
+                order={order}
+                productCount={productCount}
+                totals={totals}
+                onDeleteClick={() => setPendingDeleteId(order.id)}
+              />
+            ))
+          )}
+        </div>
+        <Outlet />
+      </div>
 
       {pendingOrder && (
         <ConfirmModal
