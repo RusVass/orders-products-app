@@ -9,9 +9,10 @@ Inventory-style Orders & Products manager. React 18 + TypeScript + Redux Toolkit
 ## Project structure
 
 - `client/` — React app (Vite)
-- `server/` — Express + Socket.io backend (added in a later phase)
-- `db/` — SQL schema and design notes, documentation only (added in a later phase)
+- `server/` — Express + Socket.io backend (live "active sessions" counter only)
+- `db/` — SQL schema and design notes, documentation only — see [db/README.md](db/README.md)
 - `docs/mockups/` — reference design mockups
+- `docs/source/` — original assignment material, kept verbatim for reference
 
 ## Running locally
 
@@ -19,4 +20,12 @@ Inventory-style Orders & Products manager. React 18 + TypeScript + Redux Toolkit
 cd client
 npm install
 npm run dev
+```
+
+To also see the live "active sessions" counter in the header, run the backend in a second terminal:
+
+```bash
+cd server
+npm install
+npm start
 ```
