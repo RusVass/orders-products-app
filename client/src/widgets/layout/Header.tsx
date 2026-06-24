@@ -1,3 +1,4 @@
+import { SessionBadge } from '@/features/active-sessions/SessionBadge';
 import { useClock } from '@/shared/lib/useClock';
 
 const dateFormatter = new Intl.DateTimeFormat('en-GB', {
@@ -18,6 +19,7 @@ export function Header() {
     <header className="header">
       <div className="header__brand">INVENTORY</div>
       <input className="header__search form-control" type="search" placeholder="Поиск" />
+      <SessionBadge />
       <div className="header__clock">
         <span className="header__clock-date">{dateFormatter.format(now)}</span>
         <span className="header__clock-time">{timeFormatter.format(now)}</span>

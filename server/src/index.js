@@ -3,7 +3,7 @@ import cors from 'cors';
 import express from 'express';
 import { Server } from 'socket.io';
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4500;
 const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:5173';
 
 const app = express();
