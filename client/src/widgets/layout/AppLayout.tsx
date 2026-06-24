@@ -9,9 +9,9 @@ export function AppLayout() {
 
   return (
     <div className="app-layout">
-      <Sidebar />
-      <div className="app-layout__main">
-        <Header />
+      <Header />
+      <div className="app-layout__body">
+        <Sidebar />
         <main className="app-layout__content">
           <AnimatePresence mode="wait">
             <motion.div
