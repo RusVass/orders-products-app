@@ -1,4 +1,4 @@
-import { useClock } from './useClock';
+import { useClock } from '@/shared/lib/useClock';
 
 const dateFormatter = new Intl.DateTimeFormat('en-GB', {
   weekday: 'short',
