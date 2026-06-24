@@ -1,4 +1,5 @@
 import { PriceTag } from '@/shared/ui/PriceTag';
+import { TrashIcon } from '@/shared/ui/TrashIcon';
 import type { Product } from '../model/types';
 import './ProductRow.css';
 
@@ -32,7 +33,7 @@ export function ProductRow({ product, orderTitle, orderDate, onDeleteClick }: Pr
         aria-label="Удалить продукт"
         onClick={onDeleteClick}
       >
-        Удалить
+        <TrashIcon />
       </button>
     </div>
   );

@@ -1,5 +1,6 @@
 import type { Price } from '@/shared/types/money';
 import { PriceTag } from '@/shared/ui/PriceTag';
+import { TrashIcon } from '@/shared/ui/TrashIcon';
 import type { Order } from '../model/types';
 import './OrderRow.css';
 
@@ -25,7 +26,7 @@ export function OrderRow({ order, productCount, totals, onDeleteClick }: OrderRo
         aria-label="Удалить приход"
         onClick={onDeleteClick}
       >
-        Удалить
+        <TrashIcon />
       </button>
     </div>
   );
