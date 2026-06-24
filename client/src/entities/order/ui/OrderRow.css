@@ -39,3 +39,15 @@
 .order-row__delete {
   color: var(--color-danger);
 }
+
+.order-row__indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  width: 32px;
+  margin: -16px -20px -16px 0;
+  background-color: var(--color-border);
+  border-radius: 0 5px 5px 0;
+}

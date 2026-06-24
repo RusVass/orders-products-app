@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import type { Price } from '@/shared/types/money';
 import { PriceTag } from '@/shared/ui/PriceTag';
 import { TrashIcon } from '@/shared/ui/TrashIcon';
@@ -13,6 +13,9 @@ interface OrderRowProps {
 }
 
 export const OrderRow = ({ order, productCount, totals, onDeleteClick }: OrderRowProps) => {
+  const { orderId } = useParams();
+  const isActive = Number(orderId) === order.id;
+
   return (
     <div className="order-row">
       <Link to={`/orders/${order.id}`} className="order-row__link">
@@ -33,6 +36,22 @@ export const OrderRow = ({ order, productCount, totals, onDeleteClick }: OrderRo
       >
         <TrashIcon />
       </button>
+      {isActive && (
+        <span className="order-row__indicator" aria-hidden="true">
+          <svg
+            width="10"
+            height="10"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polyline points="9 6 15 12 9 18" />
+          </svg>
+        </span>
+      )}
     </div>
   );
 };
