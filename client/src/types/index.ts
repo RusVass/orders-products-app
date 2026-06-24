@@ -1,10 +1,4 @@
-export type CurrencySymbol = 'USD' | 'UAH';
-
-export interface Price {
-  value: number;
-  symbol: CurrencySymbol;
-  isDefault: boolean;
-}
+import type { Price } from '@/shared/types/money';
 
 export interface Guarantee {
   start: string;
