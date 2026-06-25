@@ -17,3 +17,24 @@
   font-size: 0.85rem;
   color: var(--color-text-muted);
 }
+
+/* Heading + two filters don't fit in one row below desktop width. */
+@media (max-width: 1279px) {
+  .products-page__header {
+    flex-wrap: wrap;
+  }
+
+  .products-page__heading {
+    flex: 1 1 100%;
+    margin-right: 0;
+  }
+
+  .products-page__filter {
+    flex: 1 1 auto;
+  }
+
+  .products-page__filter select {
+    flex: 1;
+    min-width: 0;
+  }
+}
