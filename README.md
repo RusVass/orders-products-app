@@ -71,7 +71,6 @@ docker compose up --build
 client/   React app (Vite + TypeScript, lightweight Feature-Sliced Design)
 server/   Express + Socket.io backend
 db/       SQL schema (documentation only, not connected to the app)
-docs/     Mockups and original assignment material
 ```
 
 ## Notes
