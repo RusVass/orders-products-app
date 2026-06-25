@@ -2,17 +2,17 @@ services:
   server:
     build: ./server
     ports:
-      - '4500:4500'
+      - '${PORT:-4500}:${PORT:-4500}'
     environment:
-      - PORT=4500
-      - CLIENT_URL=http://localhost:8080
+      - PORT=${PORT:-4500}
+      - CLIENT_URL=${CLIENT_URL:-http://localhost:8080}
 
   client:
     build:
       context: ./client
       args:
-        VITE_SOCKET_URL: http://localhost:4500
+        VITE_SOCKET_URL: ${VITE_SOCKET_URL:-http://localhost:4500}
     ports:
-      - '8080:80'
+      - '${CLIENT_PORT:-8080}:80'
     depends_on:
       - server
