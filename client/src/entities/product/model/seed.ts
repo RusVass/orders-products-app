@@ -1,9 +1,5 @@
 import type { Product } from './types';
 
-// Diversified across 4 types (Monitor, Smartphone, Laptop, Tablet) so the
-// Products page's type/specification filters are actually meaningful during
-// manual QA - the original ported app.js data had two near-identical
-// "Product 1" / Monitors entries, which made every filter a no-op.
 export const products: Product[] = [
   {
     id: 1,
