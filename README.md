@@ -58,7 +58,7 @@ docker compose up --build
 
 Client on `http://localhost:8080`, backend on `http://localhost:4500`. Stop with `docker compose down`.
 
-If port `4500` or `8080` is already in use by something else on your machine, either free it or edit the host-side port (the part before the colon) in `docker-compose.yml`.
+If port `4500` or `8080` is already in use by something else on your machine, override `PORT`/`CLIENT_PORT` (see the root `.env.example`) instead of editing `docker-compose.yml` directly — copy it to `.env` in the repo root and Compose picks it up automatically.
 
 ## Deployment
 
