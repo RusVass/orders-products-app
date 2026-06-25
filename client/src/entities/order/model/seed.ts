@@ -1,9 +1,5 @@
 import type { Order } from './types';
 
-// Ported from the original app.js (see docs/source/app.js): fixes a missing
-// comma before `guarantee` that made the file unparsable, and drops a
-// `products` getter that ignored `product.order` and always returned every
-// product regardless of order id.
 export const orders: Order[] = [
   {
     id: 1,
