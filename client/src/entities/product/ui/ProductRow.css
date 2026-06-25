@@ -62,3 +62,21 @@
 .product-row__delete {
   color: var(--color-danger);
 }
+
+/* Below desktop width, seven side-by-side blocks (photo, main, condition,
+   guarantee, price, order, delete) don't fit - stack them instead. */
+@media (max-width: 1279px) {
+  .product-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .product-row__order {
+    text-align: left;
+  }
+
+  .product-row__delete {
+    align-self: flex-end;
+  }
+}

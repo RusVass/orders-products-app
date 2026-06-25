@@ -12,3 +12,11 @@
   flex: 1;
   min-width: 0;
 }
+
+/* The list and details panel can't share a row below desktop width -
+   stack the panel under the list instead of squeezing both to ~50%. */
+@media (max-width: 1279px) {
+  .orders-page__body {
+    flex-direction: column;
+  }
+}

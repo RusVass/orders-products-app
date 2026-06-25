@@ -113,3 +113,58 @@
   font-weight: 600;
   color: var(--color-text);
 }
+
+/* Tablet and mobile: header content no longer fits in one row. */
+@media (max-width: 1279px) {
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .header__search {
+    order: 3;
+    flex: 1 1 100%;
+    max-width: none;
+  }
+}
+
+/* Mobile: sidebar becomes a compact top bar instead of a 220px left column. */
+@media (max-width: 767px) {
+  .app-layout__content {
+    padding: 16px;
+  }
+
+  .app-layout__body {
+    flex-direction: column;
+  }
+
+  .header {
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .sidebar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 16px;
+    box-shadow: none;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .sidebar__avatar {
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .sidebar__nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .sidebar__link {
+    padding: 6px 10px;
+  }
+}
